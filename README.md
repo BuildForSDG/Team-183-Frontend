@@ -43,12 +43,11 @@ This starter uses [Parcel](https://parceljs.org/getting_started.html) as the bun
 -   Run your app in local dev mode: `yarn start`. This puts the bundled app in a `dist` folder, set up a local web server at localhost:1234, and continues to watch for your code changes which it syncs with the local server. This means if you loaded the app in a browser, it will auto-refresh as you code along. Feel free to use whatever bundler best meets your needs. Parcel was only added as a sample and for those looking for a simple but effective solution to the hassle of bundlers. 
 
 ## Authors
-1\. Daniel Kamar - TL https://github.com/koitoror
-2\. Osumgba Chiamaka - Mentor https://github.com/osumgbachiamaka
-3\. Adele Gikonyo - https://github.com/adelewg
+1\. Daniel Kamar - TL <https://github.com/koitoror>
+2\. Osumgba Chiamaka - Mentor <https://github.com/osumgbachiamaka>
+3\. Adele Gikonyo - <https://github.com/adelewg>
 4\. Salma - TC
-5\. Mildred - https://github.com/milamish
-
+5\. Mildred - <https://github.com/milamish>
 
 ## Contributing
 
