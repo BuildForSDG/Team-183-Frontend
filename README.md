@@ -15,7 +15,7 @@ This is a simple JavaScript starter repo template for setting up your project. T
 
 ## Why
 
-Talk about what problem this solves, what SDG(s) and SGD targets it addresses and why these are imoirtant
+SDG GOAL 2: ZERO HUNGER. This is a tech solution to help our local community double the agricultural production and income of small-scale food producers, in particular women, family farmers, animal and fish farmers, by creating access to land, technical knowledge, financial services, markets and opportunities -- Then we can double the productivity and incomes of small-scale food producers. 
 
 ## Usage
 
@@ -43,8 +43,11 @@ This starter uses [Parcel](https://parceljs.org/getting_started.html) as the bun
 -   Run your app in local dev mode: `yarn start`. This puts the bundled app in a `dist` folder, set up a local web server at localhost:1234, and continues to watch for your code changes which it syncs with the local server. This means if you loaded the app in a browser, it will auto-refresh as you code along. Feel free to use whatever bundler best meets your needs. Parcel was only added as a sample and for those looking for a simple but effective solution to the hassle of bundlers. 
 
 ## Authors
-
-List the team behind this project. Their names linked to their Github, LinkedIn, or Twitter accounts should siffice. Ok to signify the role they play in the project, including the TTL and mentor
+1\. Daniel Kamar - Team Lead <https://github.com/koitoror>.  
+2\. Osumgba Chiamaka - Mentor <https://github.com/osumgbachiamaka>.  
+3\. Adele Gikonyo - <https://github.com/adelewg>.  
+4\. Salma - Team Coordinator.  
+5\. Mildred - <https://github.com/milamish>.  
 
 ## Contributing
 
