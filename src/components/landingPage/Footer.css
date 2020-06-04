@@ -1,114 +1,112 @@
 .Footer {
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column !important;
-    background: #be2edd  ;
-  
-     min-height: calc(100vh - 400px);
-    
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column !important;
+  background: #be2edd;
+
+  min-height: calc(100vh - 400px);
 }
 
 ol {
-    display: flex;
-    padding-bottom: 0 !important;
+  display: flex;
+  padding-bottom: 0 !important;
 }
 
 ol li {
-    position: relative;
-    display: block;
-    color: #666;
-    font-size: 30px;
-    height: 60px;
-    width: 60px;
-    background: #171515;
-    line-height: 60px;
-    border-radius: 50%;
-    margin: 0 15px;
-    cursor: pointer;
-    transition: .5s;
+  position: relative;
+  display: block;
+  color: #666;
+  font-size: 30px;
+  height: 60px;
+  width: 60px;
+  background: #171515;
+  line-height: 60px;
+  border-radius: 50%;
+  margin: 0 15px;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
 .ol li:before {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    height: inherit;
-    width: inherit;
-    /* background: #d35400; */
-    border-radius: 30%;
-    transform: scale(.9);
-    z-index: -1;
-    transition: .5s;
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: inherit;
+  width: inherit;
+  /* background: #d35400; */
+  border-radius: 30%;
+  transform: scale(0.9);
+  z-index: -1;
+  transition: 0.5s;
 }
 
 ol li:nth-child(1):before {
-    background: #4267B2;
+  background: #4267b2;
 }
 
 ol li:nth-child(2):before {
-    background: #1DA1F2;
+  background: #1da1f2;
 }
 
 ol li:nth-child(3):before {
-    background: #E1306C;
+  background: #e1306c;
 }
 
 ol li:nth-child(4):before {
-    background: #2867B2;
+  background: #2867b2;
 }
 
 ol li:hover:before {
-    filter: blur(3px);
-    transform: scale(1.2);
-    /* box-shadow: 0 0 15px #d35400; */
+  filter: blur(3px);
+  transform: scale(1.2);
+  /* box-shadow: 0 0 15px #d35400; */
 }
 
 ol li:nth-child(1):hover:before {
-    box-shadow: 0 0 15px #4267B2;
+  box-shadow: 0 0 15px #4267b2;
 }
 
 ol li:nth-child(2):hover:before {
-    box-shadow: 0 0 15px #1DA1F2;
+  box-shadow: 0 0 15px #1da1f2;
 }
 
 ol li:nth-child(3):hover:before {
-    box-shadow: 0 0 15px #E1306C;
+  box-shadow: 0 0 15px #e1306c;
 }
 
 ol li:nth-child(4):hover:before {
-    box-shadow: 0 0 15px #2867B2;
+  box-shadow: 0 0 15px #2867b2;
 }
 
 ol li:nth-child(1):hover {
-    color: #456cba;
-    box-shadow: 0 0 15px #4267B2;
-    text-shadow: 0 0 15px #4267B2;
+  color: #456cba;
+  box-shadow: 0 0 15px #4267b2;
+  text-shadow: 0 0 15px #4267b2;
 }
 
 ol li:nth-child(2):hover {
-    color: #26a4f2;
-    box-shadow: 0 0 15px #1DA1F2;
-    text-shadow: 0 0 15px #1DA1F2;
+  color: #26a4f2;
+  box-shadow: 0 0 15px #1da1f2;
+  text-shadow: 0 0 15px #1da1f2;
 }
 
 ol li:nth-child(3):hover {
-    color: #e23670;
-    box-shadow: 0 0 15px #E1306C;
-    text-shadow: 0 0 15px #E1306C;
+  color: #e23670;
+  box-shadow: 0 0 15px #e1306c;
+  text-shadow: 0 0 15px #e1306c;
 }
 
 ol li:nth-child(4):hover {
-    color: #2a6cbb;
-    box-shadow: 0 0 15px #2867B2;
-    text-shadow: 0 0 15px #2867B2;
+  color: #2a6cbb;
+  box-shadow: 0 0 15px #2867b2;
+  text-shadow: 0 0 15px #2867b2;
 }
 
 dl,
 ol,
 ul {
-    
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
