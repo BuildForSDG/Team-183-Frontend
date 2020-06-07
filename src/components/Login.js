@@ -24,15 +24,13 @@ class Login extends React.Component {
     };
 
     login(user).then((res) => {
-      // console.log(res);
-
       if (res.data.message) {
         toast.success(`Message sent: ${res.data.message}`);
         localStorage.setItem('usertoken', res.data.token);
         setTimeout(() => this.props.history.push(`/profile`), 5000);
       } else if (res.data.warning) {
         toast.warning(`Warning: ${res.data.warning}`);
-        setTimeout(() => this.props.history.push(`/`), 5000);
+        setTimeout(() => this.props.history.push(`/login`), 5000);
       } else if (res.error) {
         // console.log(res.error);
         toast.error(`Message sent: ${res.error.data}`);

@@ -27,14 +27,13 @@ class Signup extends React.Component {
     };
 
     register(newUser).then((res) => {
-      console.log(res);
       if (res.data.message) {
         toast.success(`Message sent: ${res.data.message}`);
         // localStorage.setItem("usertoken", res.data.token);
         setTimeout(() => this.props.history.push(`/login`), 5000);
       } else if (res.data.warning) {
         toast.warning(`Warning: ${res.data.warning}`);
-        setTimeout(() => this.props.history.push(`/`), 5000);
+        setTimeout(() => this.props.history.push(`/signup`), 5000);
       }
     });
   };
@@ -49,9 +48,7 @@ class Signup extends React.Component {
                 <div className="card-body">
                   <h4 className="card-title">Sign Up</h4>
                   <ToastContainer />
-                  {/* <form noValidate onSubmit={this.onSubmit}> */}
-                  <form className="my-login-validation" onSubmit={this.onSubmit} novalidate="">
-                    {/* <form method="POST" className="my-login-validation" onSubmit={this.onSubmit} novalidate=""> */}
+                  <form className="my-login-validation" onSubmit={this.onSubmit} noValidate="">
                     <div className="form-group">
                       <label htmlFor="username">UserName</label>
                       <input
