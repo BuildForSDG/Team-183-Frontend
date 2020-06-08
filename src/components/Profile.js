@@ -35,19 +35,39 @@ class Profile extends Component {
                 <tr>
                   <td>First Name</td>
                   <td>{this.state.first_name}</td>
+                  {/* <input
+                    type="text"
+                    value={this.state.first_name}
+                    // ohchange=
+                  /> */}
                 </tr>
                 <tr>
                   <td>Last Name</td>
                   <td>{this.state.last_name}</td>
+                  {/* <input
+                    type="text"
+                    value={this.state.last_name}
+                    // ohchange=
+                  /> */}
                 </tr>
                 <tr>
                   <td>Username</td>
                   <td>{this.state.username}</td>
+                  {/* <input
+                    type="text"
+                    value={this.state.username}
+                    // ohchange=
+                  /> */}
                 </tr>
 
                 <tr>
                   <td>Email</td>
                   <td>{this.state.email}</td>
+                  {/* <input
+                    type="text"
+                    value={this.state.email}
+                    // ohchange=
+                  /> */}
                 </tr>
               </tbody>
             </table>

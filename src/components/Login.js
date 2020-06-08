@@ -27,7 +27,7 @@ class Login extends React.Component {
       if (res.data.message) {
         toast.success(`Message sent: ${res.data.message}`);
         localStorage.setItem('usertoken', res.data.token);
-        setTimeout(() => this.props.history.push(`/profile`), 5000);
+        setTimeout(() => this.props.history.push(`/edit_profile`), 5000);
       } else if (res.data.warning) {
         toast.warning(`Warning: ${res.data.warning}`);
         setTimeout(() => this.props.history.push(`/login`), 5000);
