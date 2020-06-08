@@ -5,6 +5,7 @@ axios.defaults.baseURL =
   process.env.REACT_APP_NODE_ENV === 'production'
     ? process.env.REACT_APP_PROD_API_HOST
     : process.env.REACT_APP_DEV_API_HOST;
+axios.defaults.headers.common['Access-Control-Allow-Origin']='*'; // for all requests
 axios.defaults.headers.common['Content-Type']='application/json'; // for all requests
 // axios.defaults.headers.common['x-frame-options']='SAMEORIGIN';
 // axios.defaults.headers.common['Accept'] =
@@ -54,4 +55,40 @@ export const login = async user => {
       console.log(err);
       // toast.warning(`there is a problem ${err}`)
     });
+};
+
+
+export const reset = async resetUser => {
+  return await axios
+    .put('api/v1/users/reset-password', {
+      email: resetUser.email,
+      // old_password: resetUser.old_password,
+      password: resetUser.password,
+      confirm: resetUser.confirm,
+    })
+
+    .catch(
+      setTimeout((err) => {
+        // console.log(err);
+        // toast.warning(`there is a problem ${err}`);
+      }, 5000)
+    );
+};
+
+export const forgot = async forgotUser => {
+  return await axios
+    .post('api/v1/users/forgot-password', {
+      email: forgotUser.email,
+      // url: forgotUser.url,
+      // old_password: resetUser.old_password,
+      // password: resetUser.password,
+      // confirm: resetUser.confirm,
+    })
+
+    .catch(
+      setTimeout((err) => {
+        // console.log(err);
+        // toast.warning(`there is a problem ${err}`);
+      }, 5000)
+    );
 };
