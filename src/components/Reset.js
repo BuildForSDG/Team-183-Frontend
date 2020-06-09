@@ -45,7 +45,7 @@ class Reset extends React.Component {
     };
     reset(resetUser).then((res) => {
       if (res.data.message) {
-        toast.success(`Message sent: ${res.data.message}`);
+        toast.success(`Message: ${res.data.message}`);
         setTimeout(() => this.props.history.push(`/login`), 5000);
       } else if (res.data.warning) {
         toast.warning(`Warning: ${res.data.warning}`);

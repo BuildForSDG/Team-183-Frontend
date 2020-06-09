@@ -25,7 +25,7 @@ class Login extends React.Component {
 
     login(user).then((res) => {
       if (res.data.message) {
-        toast.success(`Message sent: ${res.data.message}`);
+        toast.success(`Message: ${res.data.message}`);
         localStorage.setItem('usertoken', res.data.token);
         setTimeout(() => this.props.history.push(`/edit_profile`), 5000);
       } else if (res.data.warning) {
@@ -33,7 +33,7 @@ class Login extends React.Component {
         setTimeout(() => this.props.history.push(`/login`), 5000);
       } else if (res.error) {
         // console.log(res.error);
-        toast.error(`Message sent: ${res.error.data}`);
+        toast.error(`Message: ${res.error.data}`);
       }
     });
   };
@@ -44,9 +44,10 @@ class Login extends React.Component {
         <div className="container h-100">
           <div className="row justify-content-md-center h-100">
             <div className="card-wrapper">
-              <div className="brand">
-                <img src="" alt="" />
-              </div>
+              
+              {/* <div className="previewStyle">
+                <img src="http://res.cloudinary.com/daniel2019/image/upload/v1592360735/snpvgk0lottbyu224ebx.png" alt="" />
+              </div> */}
 
               <div className="card fat mb-3">
                 <div className="card-body">
@@ -66,7 +67,7 @@ class Login extends React.Component {
                         required
                         autoFocus
                       />
-                      <div className="invalid-feedback">Email is invalid</div>
+                      {/* <div className="invalid-feedback">Email is invalid</div> */}
                     </div>
 
                     <div className="form-group">
@@ -86,7 +87,7 @@ class Login extends React.Component {
                         required
                         data-eye
                       />
-                      <div className="invalid-feedback">Password is required</div>
+                      {/* <div className="invalid-feedback">Password is required</div> */}
                     </div>
 
                     <div className="form-group">
@@ -103,6 +104,7 @@ class Login extends React.Component {
                         Login
                       </button>
                     </div>
+                    
                     <div className="mt-4 text-center">
                       Don't have an account? <Link to="/Signup">Create One</Link>
                     </div>

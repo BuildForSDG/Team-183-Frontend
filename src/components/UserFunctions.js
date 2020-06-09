@@ -1,6 +1,9 @@
 import axios from 'axios';
 // import { toast } from 'react-toastify';
 
+export const CLOUDINARY_UPLOAD_PRESET = process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET;
+export const CLOUDINARY_UPLOAD_URL = process.env.REACT_APP_CLOUDINARY_UPLOAD_URL;
+
 axios.defaults.baseURL =
   process.env.REACT_APP_NODE_ENV === 'production'
     ? process.env.REACT_APP_PROD_API_HOST
