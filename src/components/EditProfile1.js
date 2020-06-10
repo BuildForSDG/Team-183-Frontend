@@ -69,20 +69,20 @@ class EditProfile extends React.Component {
 
     const user = {
 
-      first_name: this.state.first_name,
-      last_name: this.state.last_name,
-      username: this.state.username,
-      address: this.state.address,
-      email: this.state.email,
-      phone_number: this.state.phone_number,
+      first_name: this.state.first_name ? this.state.first_name : '',
+      last_name: this.state.last_name ? this.state.last_name : '',
+      username: this.state.username ? this.state.username : '',
+      address: this.state.address ? this.state.address : '',
+      email: this.state.email ? this.state.email : '',
+      phone_number: this.state.phone_number ? this.state.phone_number : '',
 
-      city: this.state.city,
-      country: this.state.country,
-      postal_code: this.state.postal_code,
-      bio: this.state.bio,
+      city: this.state.city ? this.state.city : '',
+      country: this.state.country ? this.state.country : '',
+      postal_code: this.state.postal_code ? this.state.postal_code : '',
+      bio: this.state.bio ? this.state.bio : '',
 
-      is_farmer: this.state.is_farmer,
-      is_vendor: this.state.is_vendor,
+      is_farmer: this.state.is_farmer ? this.state.is_farmer : '',
+      is_vendor: this.state.is_vendor ? this.state.is_vendor : '',
 
       // image: this.state.image,
       // image_url: this.state.image_url,
@@ -97,7 +97,7 @@ class EditProfile extends React.Component {
         setTimeout(() => this.props.history.push(`/login`), 5000);
       } else if (res.data.warning) {
         toast.warning(`Warning: ${res.data.warning}`);
-        setTimeout(() => this.props.history.push(`/login`), 5000);
+        setTimeout(() => this.props.history.push(`/edit_profile`), 5000);
       } else if (res.error) {
         // console.log(res.error);
         toast.error(`Message sent: ${res.error.data}`);
@@ -183,6 +183,8 @@ class EditProfile extends React.Component {
                         className="form-control"
                         placeholder="salma@example.com"
                         value={this.state.email}
+                        required
+                        autoFocus
                       />
                     </div>
                   </div>
@@ -201,6 +203,8 @@ class EditProfile extends React.Component {
                         value={this.state.first_name}
                         name="first_name"
                         onChange={this.onChange}
+                        required
+                        autoFocus
                       />
                     </div>
                   </div>
@@ -217,6 +221,8 @@ class EditProfile extends React.Component {
                         value={this.state.last_name}
                         name="last_name"
                         onChange={this.onChange}
+                        required
+                        autoFocus
                       />
                     </div>
                   </div>
@@ -239,6 +245,8 @@ class EditProfile extends React.Component {
                         type="text"
                         name="address"
                         onChange={this.onChange}
+                        required
+                        autoFocus
                       />
                     </div>
                   </div>
@@ -257,6 +265,8 @@ class EditProfile extends React.Component {
                         value={this.state.city}
                         name="city"
                         onChange={this.onChange}
+                        required
+                        autoFocus
                       />
                     </div>
                   </div>
@@ -273,6 +283,8 @@ class EditProfile extends React.Component {
                         value={this.state.country}
                         name="country"
                         onChange={this.onChange}
+                        required
+                        autoFocus
                       />
                     </div>
                   </div>
@@ -289,6 +301,8 @@ class EditProfile extends React.Component {
                         value={this.state.postal_code}
                         name="postal_code"
                         onChange={this.onChange}
+                        required
+                        autoFocus
                       />
                     </div>
                   </div>
@@ -305,6 +319,8 @@ class EditProfile extends React.Component {
                         value={this.state.phone_number}
                         name="phone_number"
                         onChange={this.onChange}
+                        required
+                        autoFocus
                       />
                     </div>
                   </div>
@@ -324,6 +340,8 @@ class EditProfile extends React.Component {
                     value={this.state.bio}
                     name="bio"
                     onChange={this.onChange}
+                    required
+                    autoFocus
                   ></textarea>
                 </div>
               </div>
@@ -343,6 +361,8 @@ class EditProfile extends React.Component {
                       name="is_vendor"
                       onChange={this.handleToggle}
                       style={{ color: 'red' }}
+                      // required
+                      // autoFocus
                     />
                     Are you a vendor?
                   </label>
@@ -356,6 +376,8 @@ class EditProfile extends React.Component {
                       style={{ color: 'red' }}
                       name="is_farmer"
                       onChange={this.handleToggle}
+                      // required
+                      // autoFocus
                     />
                     Are you a customer?
                   </label>
