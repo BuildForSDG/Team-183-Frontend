@@ -92,3 +92,62 @@ export const forgot = async forgotUser => {
       }, 5000)
     );
 };
+
+
+export const edit_profile = async user => {
+  return await axios
+    .patch('api/v1/users/profile', {
+
+      first_name: user.first_name,
+      last_name: user.last_name,
+      username: user.username,
+      address: user.address,
+      email: user.email,
+      phone_number: user.phone_number,
+
+      city: user.city,
+      country: user.country,
+      postal_code: user.postal_code,
+      bio: user.bio,
+
+      is_farmer: user.is_farmer,
+      is_vendor: user.is_vendor,
+
+      image_url: user.image_url,
+    })
+
+    .catch((err) => {
+      console.log(err);
+      // toast.warning(`there is a problem ${err}`)
+    });
+};
+
+// export const edit_profile1 = (file, user) => {
+//     try {
+//     const url = 'api/v1/users/profile';
+//     const formData = new FormData();
+//     formData.append('file', file);
+
+//     formData.append('first_name', user.first_name);
+//     formData.append('last_name', user.last_name);
+//     formData.append('username', user.username);
+//     formData.append('address', user.address);
+//     formData.append('email', user.email);
+//     formData.append('phone_number', user.phone_number);
+
+//     formData.append('city', user.city);
+//     formData.append('country', user.country);
+//     formData.append('postal_code', user.postal_code);
+//     formData.append('bio', user.bio);
+
+//     formData.append('is_farmer', user.is_farmer);    
+//     formData.append('is_vendor', user.is_vendor);
+
+//     formData.append('image_url', user.image_url);
+    
+//     return axios.patch(url, formData);
+//   }
+//   catch (err) {
+//     return err;
+//   }
+// }
