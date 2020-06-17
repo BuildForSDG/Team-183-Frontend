@@ -15,7 +15,7 @@ class Landing extends React.Component {
         <About />
         <Solution />
         <Contact />
-        <div className="footer text-center" style={{ background: 'black', color: 'white' }}>
+        <div className="footer text-center" style={{ background: 'black', color: 'orange', marginTop: '-14px' }}>
           Copyright &copy; 2020 &mdash; Chicken-Farm-ke
         </div>
       </div>

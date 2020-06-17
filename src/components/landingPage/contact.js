@@ -16,7 +16,7 @@ class Contact extends React.Component {
 
         <div
           className="row d-flex justify-content-center align-items-center"
-          style={{ color: 'white', background: ' orange' }}
+          style={{ color: 'white', background: ' orange',  marginBottom: '15px'}}
         >
           <div className="col-6 col-md-6">
             <h1 className="text-center" style={{ color: 'white' }}>
@@ -55,13 +55,13 @@ class Contact extends React.Component {
                 <Form.Text className="text-muted">We'll never share your email with anyone else.</Form.Text>
               </Form.Group>
 
-              <Form.Group>
+              {/* <Form.Group>
                 <Form.Label>username:</Form.Label>
                 <Form.Control type="text" placeholder="Enter username" />
-              </Form.Group>
+              </Form.Group> */}
 
-              <Form.Group controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Check me out" />
+              <Form.Group controlId="formBasicCheckbox" style={{ lineHeight: '1.2rem' }}>
+                <Form.Check type="checkbox" label="Subscribe to join our mailing list for latest updates" />
               </Form.Group>
               <Button className="text-white btn-primary btn-block" variant="primary" type="button">
                 Submit

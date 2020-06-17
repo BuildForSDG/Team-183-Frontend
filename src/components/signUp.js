@@ -28,7 +28,7 @@ class Signup extends React.Component {
 
     register(newUser).then((res) => {
       if (res.data.message) {
-        toast.success(`Message sent: ${res.data.message}`);
+        toast.success(`Message: ${res.data.message}`);
         // localStorage.setItem("usertoken", res.data.token);
         setTimeout(() => this.props.history.push(`/login`), 5000);
       } else if (res.data.warning) {
@@ -44,6 +44,11 @@ class Signup extends React.Component {
         <div className="container h-100">
           <div className="row justify-content-md-center h-100">
             <div className="card-wrapper">
+
+
+
+
+
               <div className="card fat mb-3">
                 <div className="card-body">
                   <h4 className="card-title">Sign Up</h4>
@@ -58,11 +63,14 @@ class Signup extends React.Component {
                         placeholder="Enter UserName"
                         value={this.state.username}
                         onChange={this.onChange}
+                        required
+                        autoFocus
                       />
                     </div>
 
                     <div className="form-group">
                       <label htmlFor="email">Email Address</label>
+
                       <input
                         type="email"
                         className="form-control"
@@ -70,6 +78,8 @@ class Signup extends React.Component {
                         placeholder="Enter Email"
                         value={this.state.email}
                         onChange={this.onChange}
+                        required
+                        autoFocus
                       />
                     </div>
 
@@ -110,6 +120,7 @@ class Signup extends React.Component {
                         Sign Up
                       </button>
                     </div>
+                    
                     <div className="mt-4 text-center">
                       Already have an account? <Link to="/Login">Login</Link>
                     </div>

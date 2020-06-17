@@ -3,11 +3,10 @@ import jwt_decode from 'jwt-decode';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { withRouter } from 'react-router-dom';
-import Dropzone from 'react-dropzone';
-import axios from "axios";
 
 import NavBar from './NavBar_Profile';
-import { edit_profile, CLOUDINARY_UPLOAD_PRESET, CLOUDINARY_UPLOAD_URL} from './UserFunctions';
+
+import { edit_profile } from './UserFunctions';
 
 class EditProfile extends React.Component {
   state = {
@@ -23,16 +22,12 @@ class EditProfile extends React.Component {
     postal_code: '',
     bio: '',
 
-    user_type: '',
-    is_farmer: '',
-    is_vendor: '',
-    // is_farmer: false,
-    // is_vendor: false,
+    // is_farmer: '',
+    // is_vendor: '',
+    is_farmer: 'false',
+    is_vendor: 'true',
 
-    files: [],
-    uploadedFile: null,
-
-    uploadedFileCloudinaryUrl: '',
+    // img_url: '',
     profile_completed: ''
   };
 
@@ -43,97 +38,33 @@ class EditProfile extends React.Component {
       first_name: decoded.identity.first_name,
       last_name: decoded.identity.last_name,
       username: decoded.identity.username,
-      email: decoded.identity.email,
-
       address: decoded.identity.address,
+      email: decoded.identity.email,
       phone_number: decoded.identity.phone_number,
+
       city: decoded.identity.city,
       country: decoded.identity.country,
       postal_code: decoded.identity.postal_code,
-
       bio: decoded.identity.bio,
-      uploadedFileCloudinaryUrl: decoded.identity.image_url,
 
       is_farmer: decoded.identity.is_farmer,
       is_vendor: decoded.identity.is_vendor,
-      profile_completed: decoded.identity.profile_completed,
 
-      // showComponent: false
-
+      // image_url: decoded.identity.image_url,
+      profile_completed: decoded.identity.profile_completed
     });
   }
 
   onChange = (e) => {
-
     this.setState({ [e.target.name]: e.target.value });
-
-
   };
 
   handleToggle = () => {
-
-    console.log(this.state.user_type)
-    if (this.state.user_type === 'is_vendor'){
-      this.setState({
-        is_farmer: false,
-        is_vendor: true,
-      });
-    }
-
-    console.log(this.state.user_type === 'is_farmer')
-    if (this.state.user_type === 'is_farmer'){
-      this.setState({
-        is_farmer: true,
-        is_vendor: false,
-      });
-    }
-    
-  };
-  
-
-  onImageDrop = (files) => {
     this.setState({
-      files: files.map((file) =>
-        Object.assign(file, {
-          preview: URL.createObjectURL(file),
-        })
-      ),
-      // files: files[0],
-      uploadedFile: files[0],
+      is_farmer: !this.state.is_farmer,
+      is_vendor: !this.state.is_vendor,
     });
-
-    this.handleImageUpload(files[0]);
   };
-
-  handleImageUpload = async (file) => {
-    const url = CLOUDINARY_UPLOAD_URL;
-
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
-
-    try {
-      let response = await axios.post(url, formData);
-
-      // console.log(response);
-      if (response.data.url !== "") {
-        this.setState({
-          uploadedFileCloudinaryUrl: response.data.url,
-
-        });
-      }
-    } catch (err) {
-      console.log(err);
-    }
-
-    this.setState({ files: [] });
-  };
-  // }
-
-  componentWillUnmount() {
-    // Make sure to revoke the data uris to avoid memory leaks
-    this.state.files.forEach((file) => URL.revokeObjectURL(file.preview));
-  }
 
   onSubmit = (e) => {
     e.preventDefault();
@@ -143,27 +74,27 @@ class EditProfile extends React.Component {
       first_name: this.state.first_name ? this.state.first_name : '',
       last_name: this.state.last_name ? this.state.last_name : '',
       username: this.state.username ? this.state.username : '',
-      email: this.state.email ? this.state.email : '',
-
-      phone_number: this.state.phone_number ? this.state.phone_number : '',
       address: this.state.address ? this.state.address : '',
+      email: this.state.email ? this.state.email : '',
+      phone_number: this.state.phone_number ? this.state.phone_number : '',
+
       city: this.state.city ? this.state.city : '',
       country: this.state.country ? this.state.country : '',
       postal_code: this.state.postal_code ? this.state.postal_code : '',
-
       bio: this.state.bio ? this.state.bio : '',
-      image_url: this.state.uploadedFileCloudinaryUrl ? this.state.uploadedFileCloudinaryUrl : '',
 
-      // user_type: this.state.user_type,
-      is_farmer: this.state.is_farmer,
-      is_vendor: this.state.is_vendor,
+      is_farmer: this.state.is_farmer ? this.state.is_farmer : '',
+      is_vendor: this.state.is_vendor ? this.state.is_vendor : '',
+
+      // image: this.state.image,
+      // image_url: this.state.image_url,
       // profile_completed: this.state.profile_completed
     };
     
     edit_profile(user).then((res) => {
       console.log(user)
       if (res.data.message) {
-        toast.success(`Message: ${res.data.message}`);
+        toast.success(`Message sent: ${res.data.message}`);
         localStorage.setItem('usertoken', res.data.token);
         setTimeout(() => this.props.history.push(`/login`), 5000);
       } else if (res.data.warning) {
@@ -171,33 +102,17 @@ class EditProfile extends React.Component {
         setTimeout(() => this.props.history.push(`/edit_profile`), 5000);
       } else if (res.error) {
         // console.log(res.error);
-        toast.error(`Message: ${res.error.data}`);
+        toast.error(`Message sent: ${res.error.data}`);
       }
     });
   };
 
   render() {
-    
-    const previewStyle = {
-      display: 'inline',
-      width: 100,
-      height: 100,
-    };
-    
-    const { files } = this.state;
-    const thumbs = files.map((file) => (
-      <div className="thumb" key={file.name}>
-        <div className="thumbInner">
-          <img alt="" src={file.preview} className="img kv-avatar col-sm-4 text-center" />
-        </div>
-      </div>
-    ));
-
-
     return (
       <React.Fragment>
       <NavBar />
       <div className="container " style={{ margin: 'auto', fontSize: '2rem', background: '#ffb347' }}>
+        
         <div className="card">
           <div className="card-header">
             <div className="row align-items-center">
@@ -209,45 +124,15 @@ class EditProfile extends React.Component {
 
               <form onSubmit={this.onSubmit} className="my-login-validation" noValidate="">
 
-                <div className="col-12 text-right">
+                <div className="col-4 text-right">
                   <button type="submit" className="btn btn-sm btn-primary">
                     Save Profile
                   </button>
                 </div>
+
+
                 
               </form>
-
-              <section>
-                <Dropzone onDrop={this.onImageDrop} accept="image/*">
-                  {({ getRootProps, getInputProps }) => (
-                    <div {...getRootProps()}>
-                      
-                      <input {...getInputProps()} />
-                      
-                      <div className="kv-avatar-hint drop-area">
-                          <i className="glyphicon glyphicon-tag"></i>
-                          <h6 className="text-muted">Drop an image or Click here to select a file to upload.</h6>
-                      </div>
-
-                    </div>
-                  )}
-                </Dropzone>
-                <aside className="thumbsContainer">{thumbs}</aside>
-
-                <div>
-                  {this.state.uploadedFileCloudinaryUrl === "" ? null : (
-                    <div>
-                      <p>{this.state.uploadedFileCloudinaryUrl.name}</p>
-                      <img alt="Preview" src={this.state.uploadedFileCloudinaryUrl} style={previewStyle} />
-                      <h6 className="text-muted">My Profile Preview</h6>
-                    </div>
-                  )}
-                </div>
-              </section>
-
-
-
-              
               
             </div>
           </div>
@@ -258,12 +143,11 @@ class EditProfile extends React.Component {
               <h6 className="heading-small text-muted mb-4">User information</h6>
               <div className="pl-lg-4">
                 <div className="row">
-
+{/* 
                   <div className="col-lg-6">
-                    <div className="form-group">
-                      <label
-                        className="form-control-label" htmlFor="input-username" style={{ color: 'orange' }}>
-                        Username <span className="kv-reqd">*</span>
+                    <div className="form-group"> */}
+                      {/* <label className="form-control-label" for="input-username" style={{ color: 'orange' }}>
+                        Username
                       </label>
                       <input
                         type="text"
@@ -271,15 +155,32 @@ class EditProfile extends React.Component {
                         className="form-control"
                         placeholder="Username"
                         value={this.state.username}
-                        readOnly
+                      /> */}
+                      {/* <label for="img">Select image:</label>
+                      <input type="file" id="image" name="image" accept="image/*" /> */}
+                      {/* <input type="submit"></input> */}
+                    {/* </div>
+                  </div> */}
+
+                  <div className="col-lg-6">
+                    <div className="form-group">
+                      <label className="form-control-label" for="input-username" style={{ color: 'orange' }}>
+                        Username
+                      </label>
+                      <input
+                        type="text"
+                        id="input-username"
+                        className="form-control"
+                        placeholder="Username"
+                        value={this.state.username}
                       />
                     </div>
                   </div>
 
                   <div className="col-lg-6">
                     <div className="form-group">
-                      <label className="form-control-label" htmlFor="input-email" style={{ color: 'orange' }}>
-                        Email address <span className="kv-reqd">*</span>
+                      <label className="form-control-label" for="input-email" style={{ color: 'orange' }}>
+                        Email address
                       </label>
                       <input
                         type="email"
@@ -289,7 +190,6 @@ class EditProfile extends React.Component {
                         value={this.state.email}
                         required
                         autoFocus
-                        readOnly
                       />
                     </div>
                   </div>
@@ -297,7 +197,7 @@ class EditProfile extends React.Component {
                 <div className="row">
                   <div className="col-lg-6">
                     <div className="form-group">
-                      <label className="form-control-label" htmlFor="input-first-name" style={{ color: 'orange' }}>
+                      <label className="form-control-label" for="input-first-name" style={{ color: 'orange' }}>
                         First name
                       </label>
                       <input
@@ -315,7 +215,7 @@ class EditProfile extends React.Component {
                   </div>
                   <div className="col-lg-6">
                     <div className="form-group">
-                      <label className="form-control-label" htmlFor="input-last-name" style={{ color: 'orange' }}>
+                      <label className="form-control-label" for="input-last-name" style={{ color: 'orange' }}>
                         Last name
                       </label>
                       <input
@@ -339,7 +239,7 @@ class EditProfile extends React.Component {
                 <div className="row">
                   <div className="col-md-12">
                     <div className="form-group">
-                      <label className="form-control-label" htmlFor="input-address" style={{ color: 'orange' }}>
+                      <label className="form-control-label" for="input-address" style={{ color: 'orange' }}>
                         Address
                       </label>
                       <input
@@ -359,7 +259,7 @@ class EditProfile extends React.Component {
                 <div className="row">
                   <div className="col-lg-4">
                     <div className="form-group">
-                      <label className="form-control-label" htmlFor="input-city" style={{ color: 'orange' }}>
+                      <label className="form-control-label" for="input-city" style={{ color: 'orange' }}>
                         City
                       </label>
                       <input
@@ -377,7 +277,7 @@ class EditProfile extends React.Component {
                   </div>
                   <div className="col-lg-4">
                     <div className="form-group">
-                      <label className="form-control-label" htmlFor="input-country" style={{ color: 'orange' }}>
+                      <label className="form-control-label" for="input-country" style={{ color: 'orange' }}>
                         Country
                       </label>
                       <input
@@ -395,7 +295,7 @@ class EditProfile extends React.Component {
                   </div>
                   <div className="col-lg-4">
                     <div className="form-group">
-                      <label className="form-control-label" htmlFor="input-country" style={{ color: 'orange' }}>
+                      <label className="form-control-label" for="input-country" style={{ color: 'orange' }}>
                         Postal code
                       </label>
                       <input
@@ -413,7 +313,7 @@ class EditProfile extends React.Component {
                   </div>
                   <div className="col-lg-4">
                     <div className="form-group">
-                      <label className="form-control-label" htmlFor="input-country" style={{ color: 'orange' }}>
+                      <label className="form-control-label" for="input-country" style={{ color: 'orange' }}>
                         Postal code
                       </label>
                       <input
@@ -454,26 +354,18 @@ class EditProfile extends React.Component {
 
               <legend>Choose your user type!</legend>
 
-              <div>
+              <div onChange={this.onChange}>
                 <div className="form-check">
                   <label className="form-check-label">
                     <input
                       type="radio"
-                      // type="checkbox"
-
                       className="p-2 form-check-input"
                       // defaultChecked
                       // value=""
-                      // value={this.state.is_vendor}
-                      value="is_vendor"
-                      name="user_type"
-                      onClick={this.handleToggle}
-                      onChange={this.onChange}
-                      // style={{ color: 'red' }}
-                      // checked={this.state.showComponent}
-                      checked={this.state.is_vendor}
-
-
+                      value={this.state.is_vendor}
+                      name="is_vendor"
+                      onChange={this.handleToggle}
+                      style={{ color: 'red' }}
                       // required
                       // autoFocus
                     />
@@ -484,17 +376,11 @@ class EditProfile extends React.Component {
                   <label className="form-check-label">
                     <input
                       type="radio"
-                      // type="checkbox"
                       className="p-2 form-check-input"
-                      // value={this.state.is_farmer}
-                      value="is_farmer"
-                      // style={{ color: 'green' }}
-                      name="user_type"
-                      onClick={this.handleToggle}
-                      onChange={this.onChange}
-                      // checked={this.state.showComponent}
-                      checked={this.state.is_farmer}
-
+                      value={this.state.is_farmer}
+                      style={{ color: 'red' }}
+                      name="is_farmer"
+                      onChange={this.handleToggle}
                       // required
                       // autoFocus
                     />
@@ -510,7 +396,6 @@ class EditProfile extends React.Component {
         </div>
       </div>
       </React.Fragment>
-
     );
   }
 }
