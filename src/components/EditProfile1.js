@@ -237,7 +237,7 @@ class EditProfile extends React.Component {
                 <div>
                   {this.state.uploadedFileCloudinaryUrl === "" ? null : (
                     <div>
-                      <p>{this.state.uploadedFileCloudinaryUrl.name}</p>
+                      {/* <p>{this.state.uploadedFileCloudinaryUrl.name}</p> */}
                       <img alt="Preview" src={this.state.uploadedFileCloudinaryUrl} style={previewStyle} />
                       <h6 className="text-muted">My Profile Preview</h6>
                     </div>
