@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import jwt_decode from 'jwt-decode';
-import NavBar from './NavBar_Profile';
+// import NavBar from './NavBar_Profile';
+// import NavBar from './NavBar_Responsive';
+
 
 class Profile extends Component {
   state = {
@@ -24,7 +26,7 @@ class Profile extends Component {
   render() {
     return (
       <div>
-        <NavBar />
+        {/* <NavBar /> */}
         <div className="container">
           <div className="jumbotron mt-5">
             <div className="col-sm-8 mx-auto">

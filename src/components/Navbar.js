@@ -1,12 +1,12 @@
 import React from 'react';
-// import './Home.css'
-import { Link } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
+// import { NavLink } from "react-router-dom";
 
 class Navbar extends React.Component {
   render() {
     return (
       <nav className="navbar-wrapper navbar navbar-expand-lg navbar-light " style={{ background: 'orange' }}>
-        <Link className="navbar-brand" href="/">
+        <NavLink className="navbar-brand" to="/">
           <img
             src="https://cdn1.iconfinder.com/data/icons/social-circle-2-1/72/Soundcloud-128.png"
             alt=""
@@ -14,9 +14,9 @@ class Navbar extends React.Component {
             style={{ height: '35px', width: '55px' }}
           />
           <span className=" font-weight-bold " style={{ color: 'brown' }}>
-            Chicken-Farm-ke
+            Chicken-Farm-Ke
           </span>
-        </Link>
+        </NavLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -32,38 +32,43 @@ class Navbar extends React.Component {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <a className="nav-link text-white" href="#Home">
+              <a className="nav-link text-white" href="#Home" onClick={() => this.props.history.push('/')}>
                 Home
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-white" href="#About">
+              <a className="nav-link text-white" href="#About" onClick={() => this.props.history.push('/')}>
                 About us
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-white" href="#solution">
+              <a className="nav-link text-white" href="#solution" onClick={() => this.props.history.push('/')}>
                 Services
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-white" href="#contact">
+              <a className="nav-link text-white" href="#contact" onClick={() => this.props.history.push('/')}>
                 Contact us
               </a>
             </li>
           </ul>
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Link className="btn btn-md btn-primary animate-up-2 mr-3" to="/Login">
-              <i className="fas fa-sign-in-alt  " aria-hidden="true"></i> Log In
-            </Link>
+          <div
+            //  className="mx-auto"
+            style={{ display: 'flex', justifyContent: 'space-between' }}
+          >
+            <NavLink className="btn btn-md btn-primary animate-up-2 mr-3" to="/Login" onClick={() => this.props.history.push('/Login')}>
+              <i className="fas fa-sign-in-alt  " aria-hidden="true"></i>   Log In
+            </NavLink>
 
-            <Link className="btn btn-md btn-primary " to="/Signup">
-              <i className="fas fa-plus-square " aria-hidden="true"></i> Sign Up
-            </Link>
+            <NavLink className="btn btn-md btn-primary " to="/Signup" onClick={() => this.props.history.push('/Signup')}>
+              <i className="fas fa-plus-square " aria-hidden="true"></i>   Sign Up
+            </NavLink>
           </div>
+
+
         </div>
       </nav>
     );
   }
 }
-export default Navbar;
+export default withRouter(Navbar);
