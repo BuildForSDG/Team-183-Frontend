@@ -4,9 +4,10 @@
   align-items: center;
   justify-content: center;
   flex-direction: column !important;
+  /* background: #be2edd; */
   background: orange;
 
-  height: 20vh;
+  min-height: calc(100vh - 400px);
 }
 
 ol {
@@ -31,7 +32,7 @@ ol li {
 
 .ol li:before {
   position: absolute;
-  content: "";
+  content: '';
   top: 0;
   left: 0;
   height: inherit;
