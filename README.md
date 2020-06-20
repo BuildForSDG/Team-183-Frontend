@@ -1,5 +1,6 @@
 # Team-183-Frontend
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9a398416-aa9c-4e73-8e9c-c994c9bea159/deploy-status)](https://app.netlify.com/sites/team-183-frontend-staging/deploys)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/509be334f96e4e45b6801ca68f3c2ecb)](https://app.codacy.com/gh/BuildForSDG/Team-183-Frontend?utm_source=github.com&utm_medium=referral&utm_content=BuildForSDG/Team-183-Frontend&utm_campaign=Badge_Grade_Settings)
 
 ## About

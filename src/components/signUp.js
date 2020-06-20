@@ -40,15 +40,10 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <div className="h-100" style={{ marginTop: '3rem' }}>
+      <div className="h-100" style={{ marginTop: '6rem' }}>
         <div className="container h-100">
           <div className="row justify-content-md-center h-100">
             <div className="card-wrapper">
-
-
-
-
-
               <div className="card fat mb-3">
                 <div className="card-body">
                   <h4 className="card-title">Sign Up</h4>
@@ -120,14 +115,24 @@ class Signup extends React.Component {
                         Sign Up
                       </button>
                     </div>
-                    
+
                     <div className="mt-4 text-center">
                       Already have an account? <Link to="/Login">Login</Link>
                     </div>
                   </form>
                 </div>
               </div>
-              <div className="footer text-center">Copyright &copy; 2020 Chicken-Farm-ke</div>
+              <div
+                className="footer text-center"
+                style={{
+                  background: 'black',
+                  padding: '2rem',
+                  color: 'white',
+                  marginTop: '-14px'
+                }}
+              >
+                Copyright &copy; 2020 &mdash; Chicken-Farm-ke
+              </div>{' '}
             </div>
           </div>
         </div>
