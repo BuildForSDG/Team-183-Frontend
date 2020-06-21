@@ -129,7 +129,7 @@ class Login extends React.Component {
               style={{
                 background: "black",
                 padding: "2rem",
-                color: "orange",
+                color: "white",
                 marginTop: "-14px",
               }}
             >

@@ -1,10 +1,10 @@
-import React from 'react';
-import { Form, Button } from 'react-bootstrap';
+import React from "react";
+import { Form, Button } from "react-bootstrap";
 
 class Contact extends React.Component {
   render() {
     return (
-      <div className="container" id="contact" style={{ margin: 'auto', maxWidth: '100%' }}>
+      <div className="container" id="contact" style={{ maxWidth: "100%" }}>
         <div className="row">
           <div className="col-12 col-md-12 d-flex justify-content-center align-items-center">
             <img
@@ -16,10 +16,10 @@ class Contact extends React.Component {
 
         <div
           className="row d-flex justify-content-center align-items-center"
-          style={{ color: 'white', background: ' orange' }}
+          style={{ color: "white", background: " orange" }}
         >
           <div className="col-6 col-md-6">
-            <h1 className="text-center" style={{ color: 'white' }}>
+            <h1 className="text-center" style={{ color: "white" }}>
               Find us Today
             </h1>
             <div className="d-flex justify-content-center">
@@ -48,11 +48,19 @@ class Contact extends React.Component {
           </div>
 
           <div className="col-6 col-md-6">
-            <Form style={{ color: 'white', fontSize: '1.5rem' }}>
+            <Form
+              style={{
+                color: "white",
+                fontSize: "1.5rem",
+                marginBottom: "1rem",
+              }}
+            >
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Email address:</Form.Label>
                 <Form.Control type="email" placeholder="Enter email" />
-                <Form.Text className="text-muted">We'll never share your email with anyone else.</Form.Text>
+                <Form.Text className="text-muted">
+                  We'll never share your email with anyone else.
+                </Form.Text>
               </Form.Group>
 
               <Form.Group>
@@ -63,7 +71,11 @@ class Contact extends React.Component {
               <Form.Group controlId="formBasicCheckbox">
                 <Form.Check type="checkbox" label="Check me out" />
               </Form.Group>
-              <Button className="text-white btn-primary btn-block" variant="primary" type="button">
+              <Button
+                className="text-white btn-primary btn-block"
+                variant="primary"
+                type="button"
+              >
                 Submit
               </Button>
             </Form>
