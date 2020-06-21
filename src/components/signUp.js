@@ -1,18 +1,18 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-import { register } from './UserFunctions';
+import { register } from "./UserFunctions";
 
 class Signup extends React.Component {
   state = {
-    first_name: '',
-    last_name: '',
-    username: '',
-    email: '',
-    password: '',
-    confirm: ''
+    first_name: "",
+    last_name: "",
+    username: "",
+    email: "",
+    password: "",
+    confirm: "",
   };
   onChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
@@ -23,12 +23,12 @@ class Signup extends React.Component {
       username: this.state.username,
       confirm: this.state.confirm,
       email: this.state.email,
-      password: this.state.password
+      password: this.state.password,
     };
 
     register(newUser).then((res) => {
       if (res.data.message) {
-        toast.success(`Message sent: ${res.data.message}`);
+        toast.success(`Message: ${res.data.message}`);
         // localStorage.setItem("usertoken", res.data.token);
         setTimeout(() => this.props.history.push(`/login`), 5000);
       } else if (res.data.warning) {
@@ -40,7 +40,7 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <div className="h-100" style={{ marginTop: '3rem' }}>
+      <div className="h-100" style={{ marginTop: "3rem" }}>
         <div className="container h-100">
           <div className="row justify-content-md-center h-100">
             <div className="card-wrapper">
@@ -48,7 +48,11 @@ class Signup extends React.Component {
                 <div className="card-body">
                   <h4 className="card-title">Sign Up</h4>
                   <ToastContainer />
-                  <form className="my-login-validation" onSubmit={this.onSubmit} noValidate="">
+                  <form
+                    className="my-login-validation"
+                    onSubmit={this.onSubmit}
+                    noValidate=""
+                  >
                     <div className="form-group">
                       <label htmlFor="username">UserName</label>
                       <input
@@ -58,11 +62,14 @@ class Signup extends React.Component {
                         placeholder="Enter UserName"
                         value={this.state.username}
                         onChange={this.onChange}
+                        required
+                        autoFocus
                       />
                     </div>
 
                     <div className="form-group">
                       <label htmlFor="email">Email Address</label>
+
                       <input
                         type="email"
                         className="form-control"
@@ -70,6 +77,8 @@ class Signup extends React.Component {
                         placeholder="Enter Email"
                         value={this.state.email}
                         onChange={this.onChange}
+                        required
+                        autoFocus
                       />
                     </div>
 
@@ -98,7 +107,13 @@ class Signup extends React.Component {
 
                     <div className="form-group">
                       <div className="custom-checkbox custom-control">
-                        <input type="checkbox" name="agree" id="agree" className="custom-control-input" required="" />
+                        <input
+                          type="checkbox"
+                          name="agree"
+                          id="agree"
+                          className="custom-control-input"
+                          required=""
+                        />
                         <label htmlFor="agree" className="custom-control-label">
                           I agree to the <a href="/">Terms and Conditions</a>
                         </label>
@@ -106,17 +121,31 @@ class Signup extends React.Component {
                     </div>
 
                     <div className="form-group m-0">
-                      <button type="submit" className="btn btn-primary btn-block">
+                      <button
+                        type="submit"
+                        className="btn btn-primary btn-block"
+                      >
                         Sign Up
                       </button>
                     </div>
+
                     <div className="mt-4 text-center">
                       Already have an account? <Link to="/Login">Login</Link>
                     </div>
                   </form>
                 </div>
               </div>
-              <div className="footer text-center">Copyright &copy; 2020 Chicken-Farm-ke</div>
+              <div
+                className="footer text-center"
+                style={{
+                  background: "black",
+                  padding: "2rem",
+                  color: "orange",
+                  marginTop: "-14px",
+                }}
+              >
+                Copyright &copy; 2020 &mdash; Chicken-Farm-ke
+              </div>{" "}
             </div>
           </div>
         </div>
