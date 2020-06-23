@@ -56,6 +56,7 @@ class Profile extends React.Component {
                   float: "left",
                   alignItems: "flex-start",
                   width: "80%",
+                  marginTop: '140px'
                 }}
               >
                 <div className="form-group mb-0">

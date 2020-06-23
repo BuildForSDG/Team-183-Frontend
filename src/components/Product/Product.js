@@ -1,21 +1,21 @@
 import React from "react";
 
-import NavBar from '../NavBar_Profile';
+// import NavBar from '../NavBar_Profile';
 import "./Product.css";
 
 class Product extends React.Component {
   render() {
     return (
       <div>
-        <NavBar />
+        {/* <NavBar /> */}
         <div
           className="jumbotron jumbotron-fluid"
           style={{
             background: "black",
             color: "orange",
             height: "50px",
-
-            marginBottom: "1rem",
+            // marginTop: '6rem',
+            marginBottom: "3rem",
           }}
         >
           <h1 className="display-6  ">Order your best chicken Recipe today.</h1>
