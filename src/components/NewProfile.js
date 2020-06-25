@@ -192,7 +192,7 @@ export default class NewProfile extends Component {
                 {/* <img src={} className="img-responsive" alt=""/> </div> */}
                 <div className="profile-usertitle">
                   <div className="profile-usertitle-name"> salma mohamed </div>
-                  <div className="profile-usertitle-job"> consumer </div>
+                  <div className="profile-usertitle-job"> Developer </div>
                 </div>
                 <div className="profile-userbuttons">
                   <button type="button" className="btn btn-info  btn-sm">
