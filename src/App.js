@@ -20,6 +20,8 @@ import Navbar from './components/NavBar_Responsive';
 import Footer from './components/Footer/Footer';
 // import App1 from './components/App1'
 import App2 from './components/App2';
+import NewProfile from "./components/NewProfile";
+
 
 const NavRoute = ({ exact, path, component: Component }) => (
   <Route
@@ -51,6 +53,8 @@ function App() {
           <NavRoute path="/Login" component={Login} />
           <NavRoute path="/Reset" component={Reset} />
           <NavRoute path="/profile" component={Profile} />
+          <NavRoute path="/profile-page" component={NewProfile} />
+
           <NavRoute path="/blog" component={Blog} />
           <NavRoute path="/product-page" component={Product} />
           <NavRoute path="/products" component={ProductList} />
