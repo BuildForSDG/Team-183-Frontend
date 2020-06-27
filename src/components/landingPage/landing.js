@@ -4,7 +4,6 @@ import About from "./About";
 import Solution from "./solution";
 import Contact from "./contact";
 
-// import Navbar from "../landingPage/Navbar";
 
 class Landing extends React.Component {
   render() {
@@ -24,7 +23,7 @@ class Landing extends React.Component {
             marginTop: "-14px",
           }}
         >
-          Copyright &copy; 2020 &mdash; Chicken-Farm-ke
+          Copyright &copy; 2020 &mdash; Chicken-Farm-Ke
         </div>
       </div>
     );

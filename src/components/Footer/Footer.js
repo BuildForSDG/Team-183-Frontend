@@ -4,7 +4,7 @@ import "./Footer.css";
 class Footer extends React.Component {
   render() {
     return (
-      <div className="Footer">
+      <div className="Footer" style={{ marginTop: '-250px' }}>
         <div className="pb-2">
           <ol className="px-0">
             <li>

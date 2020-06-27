@@ -6,8 +6,8 @@
   flex-direction: column !important;
   /* background: #be2edd; */
   background: orange;
-
-  min-height: calc(100vh - 400px);
+  /* min-height: calc(100vh - 400px); */
+  min-height: calc(100vh - 550px);
 }
 
 ol {

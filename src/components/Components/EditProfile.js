@@ -4,7 +4,8 @@ class EditProfile extends React.Component {
     return (
       <div
         className="container "
-        style={{ margin: "auto", fontSize: "2rem", background: "#ffb347" }}
+        style={{ margin: "auto", background: "#ffb347" }}
+
       >
         <div className="card">
           <div className="card-header">
@@ -14,8 +15,8 @@ class EditProfile extends React.Component {
                   Edit profile
                 </h3>
               </div>
-              <div className="col-4 text-right">
-                <button type="submit" className="btn btn-sm btn-primary">
+              <div className="col-4 text-right ">
+                <button type="submit" className="btn btn-sm btn-primary card1">
                   Save Profile
                 </button>
               </div>
@@ -31,8 +32,9 @@ class EditProfile extends React.Component {
                   <div className="col-lg-6">
                     <div className="form-group">
                       <label
+
                         className="form-control-label"
-                        for="input-username"
+                        htmlFor="input-username"
                         style={{ color: "orange" }}
                       >
                         Username
@@ -50,7 +52,7 @@ class EditProfile extends React.Component {
                     <div className="form-group">
                       <label
                         className="form-control-label"
-                        for="input-email"
+                        htmlFor="input-email"
                         style={{ color: "orange" }}
                       >
                         Email address
@@ -69,7 +71,7 @@ class EditProfile extends React.Component {
                     <div className="form-group">
                       <label
                         className="form-control-label"
-                        for="input-first-name"
+                        htmlFor="input-first-name"
                         style={{ color: "orange" }}
                       >
                         First name
@@ -87,7 +89,7 @@ class EditProfile extends React.Component {
                     <div className="form-group">
                       <label
                         className="form-control-label"
-                        for="input-last-name"
+                        htmlFor="input-last-name"
                         style={{ color: "orange" }}
                       >
                         Last name
@@ -113,7 +115,7 @@ class EditProfile extends React.Component {
                     <div className="form-group">
                       <label
                         className="form-control-label"
-                        for="input-address"
+                        htmlFor="input-address"
                         style={{ color: "orange" }}
                       >
                         Address
@@ -133,7 +135,7 @@ class EditProfile extends React.Component {
                     <div className="form-group">
                       <label
                         className="form-control-label"
-                        for="input-city"
+                        htmlFor="input-city"
                         style={{ color: "orange" }}
                       >
                         City
@@ -151,7 +153,7 @@ class EditProfile extends React.Component {
                     <div className="form-group">
                       <label
                         className="form-control-label"
-                        for="input-country"
+                        htmlFor="input-country"
                         style={{ color: "orange" }}
                       >
                         Country
@@ -169,7 +171,7 @@ class EditProfile extends React.Component {
                     <div className="form-group">
                       <label
                         className="form-control-label"
-                        for="input-country"
+                        htmlFor="input-country"
                         style={{ color: "orange" }}
                       >
                         Postal code

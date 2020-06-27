@@ -10,9 +10,9 @@ class Solution extends React.Component {
               Farmers
             </h2>
             <p className="lead">
-              Whether you manage a small free-range farm or a large full scale poultry farm, Chicken-Farm-ke can help
+              Whether you manage a small free-range farm or a large full scale poultry farm, Chicken-Farm-Ke can help
               you sell to end consumers or restaurants effortlessly and with ease. We cut out the middleman and enable
-              you to get paid on time. Grow your business faster with Chicken-Farm-ke. Get access to faster payments and
+              you to get paid on time. Grow your business faster with Chicken-Farm-Ke. Get access to faster payments and
               a platform to manage your business
             </p>
           </div>
@@ -32,7 +32,7 @@ class Solution extends React.Component {
               Restaurants
             </h2>
             <p>
-              open an account with Chicken-Farm-ke today and get access to exclusive deals on wholesale chicken for all
+              open an account with Chicken-Farm-Ke today and get access to exclusive deals on wholesale chicken for all
               your menu needs. From organic, free range or kieneji chicken we have the freshest and widest range of
               chicken in Kenya today.
             </p>

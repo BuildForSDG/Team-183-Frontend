@@ -16,7 +16,7 @@ class Home extends React.Component {
               </h1>
               <p className="lead" style={{ fontSize: "1.5rem" }}>
                 Join our growing number of consumers and vendors in the
-                Chicken-Farm-ke .
+                Chicken-Farm-Ke .
               </p>
             </div>
 
