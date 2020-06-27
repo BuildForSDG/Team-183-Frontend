@@ -13,29 +13,29 @@ import { edit_profile, CLOUDINARY_UPLOAD_PRESET, CLOUDINARY_UPLOAD_URL } from '.
 
 class EditProfile extends React.Component {
   state = {
-    first_name: '',
-    last_name: '',
-    username: '',
-    email: '',
-    address: '',
-    phone_number: '',
+    first_name: "",
+    last_name: "",
+    username: "",
+    email: "",
+    address: "",
+    phone_number: "",
 
-    city: '',
-    country: '',
-    postal_code: '',
-    bio: '',
+    city: "",
+    country: "",
+    postal_code: "",
+    bio: "",
 
-    user_type: '',
-    is_farmer: '',
-    is_vendor: '',
+    user_type: "",
+    is_farmer: "",
+    is_vendor: "",
     // is_farmer: false,
     // is_vendor: false,
 
     files: [],
     uploadedFile: null,
 
-    uploadedFileCloudinaryUrl: '',
-    profile_completed: ''
+    uploadedFileCloudinaryUrl: "",
+    profile_completed: "",
   };
 
   componentDidMount() {
@@ -75,7 +75,6 @@ class EditProfile extends React.Component {
         is_farmer: !is_farmer,
         is_vendor: is_farmer
       })
-      // ({is_vendor}) => ({is_vendor: !is_vendor})
       // this.handleToggle(this.state.is_farmer),
       // this.handleToggle(this.state.is_vendor)
     );
@@ -196,7 +195,7 @@ class EditProfile extends React.Component {
 
   render() {
     const previewStyle = {
-      display: 'inline',
+      display: "inline",
       width: 100,
       height: 100
     };
@@ -205,7 +204,11 @@ class EditProfile extends React.Component {
     const thumbs = files.map((file) => (
       <div className="thumb" key={file.name}>
         <div className="thumbInner">
-          <img alt="" src={file.preview} className="img kv-avatar col-sm-4 text-center" />
+          <img
+            alt=""
+            src={file.preview}
+            className="img kv-avatar col-sm-4 text-center"
+          />
         </div>
       </div>
     ));
@@ -485,7 +488,6 @@ class EditProfile extends React.Component {
                       Are you a vendor?
                     </label>
                   </div>
-
                   <div className="form-check">
                     <label className="form-check-label">
                       <input

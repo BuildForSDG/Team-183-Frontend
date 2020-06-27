@@ -19,7 +19,7 @@ class Landing extends React.Component {
           className="footer text-center"
           style={{
             background: "black",
-            padding: "1rem",
+            padding: "2rem",
             color: "white",
             marginTop: "-14px",
           }}
