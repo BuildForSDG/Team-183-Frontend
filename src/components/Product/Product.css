@@ -1,11 +1,3 @@
-body {
-  overflow: auto;
-  height: 100vh;
-  place-items: center;
-  display: grid;
-  margin: 0;
-}
-
 .cards {
   display: flex;
 }
@@ -41,5 +33,6 @@ img {
 
 .card:hover~.card {
   translate: transformX(4rem);
-  background: orange;
+  background: rgb(17, 11, 0);
+  color: white;
 }

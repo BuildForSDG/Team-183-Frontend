@@ -1,13 +1,42 @@
 body {
   margin: 0;
-  font-family: 
-  -apple-system, 
-  BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: 
-  antialiased;
-  -moz-osx-font-smoothing: 
-  grayscale;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+a:hover {
+  /* background-color: brown; */
+  font-weight: bolder;
+}
+
+.selected {
+  font-weight: bolder;
+}
+
+.navbar > a:not(.selected):hover {
+  background-color: rgba(54, 129, 175, 0.2);
+}
+
+/* @screen-sm-min: 767px;
+@screen-xs-max: 768px;
+
+@media (min-width: @screen-xs-min) {
+  .form-group-contact label {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: @creen-sm-max) {
+  .form-group-contact label {
+    font-size: 0.7em;
+  }
+} */
+
+.form-group-contact label {
+  font-size: 0.7em;
 }

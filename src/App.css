@@ -1,0 +1,452 @@
+body {
+  margin: 0;
+  display: block;
+  padding: 0;
+  max-width: 100 !important;
+  height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ---------------Navbar----------------------------- */
+.Navbar {
+  background-color: #3DCCC7;
+  display: flex;
+  padding: 16px;
+  font-family: sans-serif;
+  color: white;
+}
+.Navbar-Link {
+  padding-right: 8px;
+}
+
+.Navbar-Items {
+  display: flex;
+}
+.Navbar-Items--right {
+  margin-left:auto;
+}
+.Navbar-Link-toggle {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .Navbar-Items,
+  .Navbar {
+    flex-direction: column;
+  }
+.Navbar-Items {
+    display:none;
+  }
+.Navbar-Items--right {
+    margin-left:0;
+  }
+.Navbar-ToggleShow {
+    display: flex;
+  }
+.Navbar-Link-toggle {
+    align-self: flex-end;
+    display: initial;
+    position: absolute;
+    cursor: pointer;
+   } 
+}
+
+/* --------------Content-Area-Landing-Page-------------------------
+.container {
+    display: flex;
+}
+.container div{
+    
+    border: 1px #3DCCC7 solid;
+    padding: 10px;
+    
+} */
+.container2 div{
+    border: 1px  #3DCCC7 solid;
+    background-color:  #ED7D3A;
+    opacity: 0.5;
+    padding: 10px;
+    font-family: 'Kodchasan', sans-serif;
+    text-align: center;
+    font-weight: bold;
+
+    
+}
+.box-1 {
+    flex: 2
+}
+.box-2 {
+    flex: 1;
+    display: flex;  
+    flex-direction: column;
+}
+
+#lead_text, #logout {
+    color: #ED7D3A;
+    font-family: 'Kodchasan', sans-serif;
+    cursor: pointer;
+}
+#quantity-att-prod {
+ max-width: 50%;
+ margin-left: 10px;
+}
+    
+
+ table {
+     font-family: 'Kodchasan', sans-serif;
+
+ }
+
+/* -------------Making Image Responsive --------------------------------*/
+
+section {
+   display: flex;
+   justify-content: left;
+   flex-wrap: wrap;
+}
+.media { 
+    min-width: 0;
+    margin: 5px;
+}
+img {
+    width: 450px;
+    max-width: 100%; 
+    max-height: 550px; 
+}
+
+----------------Login Form--------------------------------------------
+input[type=text], input[type=password], input[type=number]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    color: #ED7D3A
+}
+input[type=submit] {
+    background-color: #3DCCC7;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 80%;
+}
+
+input[type=submit]:hover {
+    opacity: 0.8;
+}
+.user,.password,  {
+    color: #ED7D3A;
+}
+
+/* ---------------Footer--------------------- */
+footer {
+  margin: auto auto auto auto;
+  
+  display:flex;
+}
+
+/*Footer*/
+.Footer {
+	position: fixed !important;
+	left: 0 !important;
+	bottom: 0 !important;
+	right: 0 !important;
+	padding:10px !important;
+	max-height: 40px !important;
+	/*margin-top: 50px;*/
+}
+
+
+/* ==============Admin Dashboard====================== */
+.container-admin {
+    display: flex;
+    border: 1px #3DCCC7 solid;
+    padding: 10px;  
+
+}
+
+.dash-link {
+    color: #ED7D3A;    
+    margin: auto auto auto auto;
+    cursor: pointer;
+    
+}
+.center {
+    margin: 20px auto 20px auto;
+}
+
+.dash-link :hover {
+    opacity: 0.8;
+    cursor: pointer;
+    color: #3DCCC7;
+}
+
+/* =============product list============== */
+.container-product {
+  display: flex;
+  border: 1px #3DCCC7 solid;
+  padding: 10px; 
+  /* margin-bottom: 7em; */
+
+}
+
+.container-products {
+    display: flex;
+    border: 1px #3DCCC7 solid;
+    padding: 10px; 
+    margin-bottom: 7em;
+
+}
+th {
+    margin: auto auto auto auto;
+    padding: 10px;  
+    
+
+}
+.main-table {
+    padding: 10px;  
+   
+}
+.table-data {
+    
+    border: 1px #3DCCC7 solid;
+    padding: 5px;
+
+}
+tr:hover {
+  background: #ddd;
+}
+/* .hidden {
+    display: none;
+} */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+#btn {
+    color: #ED7D3A;
+    font-family: 'Kodchasan', sans-serif;
+    text-align: center;
+    padding: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 10px;
+}
+/* #input-box {
+    width: 250px;
+    transition: width 0.4s ease-in-out;
+}
+
+#input-box:focus {
+    width: 100%; */
+/* } */
+
+/* ==============Product Details=================== */
+.container-detail {
+    display: flex;
+    margin-bottom: 7em;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  padding-left: 20px;
+  /* font-family: arial; */
+  /* flex: 1 */
+  
+}
+
+.card1 button {
+  border: solid;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #3DCCC7;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.cards button {
+  border: solid;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #3DCCC7;
+  cursor: pointer;
+  width: 50%;
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+.card h5, p {
+    color: #ED7D3A;
+    font-family: 'Kodchasan', sans-serif;
+   
+}
+.card p {
+    color: #000;
+    font-weight: 20px;
+}
+.form-update {
+    flex:2;
+    padding-left: 20px;
+}
+
+.form-input1 {
+  width: 40% !important;
+}
+
+.notification {
+  background-color: #555;
+  color: white;
+  text-decoration: none;
+  padding: 15px 26px;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.notification:hover {
+  background: green;
+}
+
+.notification .badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+}
+
+.form-update h3 {
+    color: #ED7D3A;
+    font-family: 'Kodchasan', sans-serif;  
+}
+#delete-product {
+    background-color: red;
+}
+
+/* ========new user===== */
+.card i {
+  color: #ED7D3A;
+  padding: 100px;
+  align-self: center;
+
+}
+/* ==========cart========= */
+#btn-cart {
+    color: #ED7D3A;
+    font-family: 'Kodchasan', sans-serif;
+    text-align: center;
+    padding: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 10px;
+    width: 35%;
+    font-size: x-large;
+}
+
+#btn-cart1 {
+  color: #ED7D3A;
+  font-family: 'Kodchasan', sans-serif;
+  text-align: center;
+  padding: 10px;
+  transition: all 0.5s;
+  cursor: pointer;
+  /* margin: 10px; */
+  width: 35%;
+  font-size: x-large;
+}
+
+.not-found{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem;
+  padding: 3rem;
+  font-family: 'Montserrat', sans-serif;
+
+  & h1 {
+    font-size: 23rem;
+    margin: 0;
+    font-weight: 900;
+    background: url(https://static1.squarespace.com/static/56e85432b09f95498f330381/t/58fcf0f217bffcd18b17d71e/1492971763817/Why-Do-Stars-All-Look-Almost-the-Same-Size-ftr.jpg)  -10rem -4rem no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 20rem;
+    }
+
+    @media only screen and (max-width: 33.125em) {
+      font-size: 16rem;
+    }
+
+    @media only screen and (max-width: 26.563em) {
+      font-size: 13rem;
+    }
+
+    @media only screen and (max-width: 20em) {
+      font-size: 11rem;
+    }
+  }
+
+  &-description{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    & h3{
+      color: #000;
+      font-size: 2.4rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 0;
+    }
+
+    & p{
+      color: #000;
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 2rem;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    & a{
+      font-size: 1.4rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      background: var(--color-primary);
+      display: inline-block;
+      padding: 1.5rem 3rem;
+      border-radius: 4rem;
+      color: #fff;
+      font-weight: 700;
+      -webkit-box-shadow: 0 .4rem 1.5rem -.5rem #0046d5;
+      box-shadow: 0 .4rem 1.5rem -.5rem #0046d5;
+
+      &:hover{
+        color: var(--color-primary);
+        background: var(--color-grey-dark-1);
+      }
+    }
+  }
+}
